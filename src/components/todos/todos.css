@@ -1,0 +1,145 @@
+main{
+    height: 100vh;
+    background-image: linear-gradient(to right, #1A2980 0%, #26D0CE  51%, #1A2980  100%);
+    background-size: 200% auto;
+}
+main h1{
+    text-align: center;
+}
+
+main .todo-layout{
+    width: min(100% , 700px);
+    height: 500px;
+    overflow: auto;
+    padding: 20px;
+    margin: 30px auto 0;
+    border-radius: 8px;
+    background-color: rgb(255 255 255 /0.5);
+    position: relative;
+}
+main .todo-layout::-webkit-scrollbar{
+    width: 4px;
+}
+main .todo-layout::-webkit-scrollbar-thumb{
+    background-color: #1A2980;
+}
+main .todo-layout form{
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 99;
+    top: 0;
+    margin-bottom: 20px;
+}
+
+form .form-group{
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+}
+form .form-group input{
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+}
+form .form-group .btn{
+    padding: 10px 25px;
+    text-align: center;
+    background-color: #1A2980;
+    color: whitesmoke;
+    cursor: pointer;
+}
+main .todo-layout .actions{
+    background-color: rgb(255, 255, 255 / 0.5);
+    padding: 20px;
+    margin-top: 20px;
+    position: -webkit-sticky;
+    position: sticky;
+    border-radius: 5px;
+    bottom: -20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+main .todo-layout .actions button{
+    padding: 10px 20px;
+    border: none;
+    display: flex;
+    gap: 3px;
+    font-size: 13px;
+    outline: none;
+    color: whitesmoke;
+    border-radius: 4px;
+    cursor: pointer;
+    flex-grow: 1;
+}
+.todo-layout .actions .show-all{
+    background-color: #4361EE;
+}
+.todo-layout .actions .show-complete{
+    background-color: #3A0CA3;
+}
+.todo-layout .actions .toogle{
+    background-color: #7209B7;
+}
+.todo-layout .actions .remove{
+    background-color: #F72585;
+}
+.todo-layout .actions button svg{
+    font-size: 10px;
+}
+main .todo-layout .todo-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+main .todo-item{
+    padding: 20px;
+    background-color: rgb(242, 236, 236);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+main .todo-item .form-content{
+    display: flex;
+    gap: 5px;    
+    align-items: center;
+    flex-wrap: nowrap;
+}
+main .todo-item .form-content span{
+    cursor: pointer;
+    transition: color 0.5s ease-out;
+}
+main .todo-item .form-content span:hover{
+    color: #1A2980;
+}
+main .todo-item .btn-form{
+    display: flex;
+    gap: 5px;
+    flex-wrap: nowrap;
+    transform: translateX(200%);
+    transition: all 0.1s linear;
+}
+main .todo-item:hover .btn-form{
+    transform: translateX(0%);
+
+}
+main .todo-item .btn-form span{
+    cursor: pointer;
+    color: #1A2980;
+}
+main .todo-item .btn-form .trash{
+    color: red;
+}
+
+@media screen and (max-width:700px) {
+    .todo-layout .actions button {
+        justify-content: center;
+    }
+
+    .todo-layout .actions button span{
+        display: none;
+    }
+}
